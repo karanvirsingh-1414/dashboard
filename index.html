@@ -8,6 +8,9 @@
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<!-- My CSS -->
 	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="drag.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
 
 	<title>AdminHub</title>
 </head>
@@ -18,12 +21,14 @@
 	<section id="sidebar">
 		<a href="#" class="brand">
 			<i class='bx bxs-smile'></i>
-			<span class="text">AdminHub</span>
+			<!-- <img style="margin-left: 5%; height: 30px; width: 30px;" src="logo.png"> -->
+			<span class="text">Dashboard</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
 				<a href="#">
 					<i class='bx bxs-dashboard' ></i>
+
 					<span class="text">Dashboard</span>
 				</a>
 			</li>
@@ -99,7 +104,9 @@
 		<main>
 			<div class="head-title">
 				<div class="left">
-					<h1>Dashboard</h1>
+					<div style="display: flex;"  class="das">
+					<img style="margin-top: 3.5%; height:40px;width:40px;"  src="logo.png"> <h1 style="margin-left: 3%;">Dashboard</h1> </div>
+					
 					<ul class="breadcrumb">
 						<li>
 							<a href="#">Dashboard</a>
@@ -200,35 +207,38 @@
 						</tbody>
 					</table>
 				</div>
-				<div class="todo">
-					<div class="head">
-						<h3>Todos</h3>
-						<i class='bx bx-plus' ></i>
-						<i class='bx bx-filter' ></i>
-					</div>
-					<ul class="todo-list">
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-						<li class="not-completed">
-							<p>Todo List</p>
-							<i class='bx bx-dots-vertical-rounded' ></i>
-						</li>
-					</ul>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.10.2/Sortable.min.js"></script>
+			</head>
+			
+			  <div class="wrapper">
+				<body><h1 style="font-size: 30px;">To-Do's</h1> <br> 
+				<div class="item">
+				  <span class="text">Turn on Post Notifications</span>
+				  <i class="fas fa-bars"></i>
 				</div>
+				<div class="item">
+				  <span class="text">Share Accounts That Inspire & WOW You!</span>
+				  <i class="fas fa-bars"></i>
+				</div>
+				<div class="item">
+				  <span class="text">Like/Comment On Photos</span>
+				  <i class="fas fa-bars"></i>
+				</div>
+				<div class="item">
+				  <span class="text">Disable AD blocks</span>
+				  <i class="fas fa-bars"></i>
+				</div>
+				<div class="item">
+				  <span class="text">Tag a Friend</span>
+				  <i class="fas fa-bars"></i>
+				</div>
+			  </div>
+			  <script>
+				const dragArea = document.querySelector(".wrapper");
+				new Sortable(dragArea, {
+				  animation: 350
+				});
+			  </script>
 			</div>
 		</main>
 		<!-- MAIN -->
